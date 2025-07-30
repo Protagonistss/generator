@@ -1,0 +1,24 @@
+[package]
+name = "vue-generator"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "A Rust CLI tool for generating Vue.js project templates"
+license = "MIT"
+repository = "https://github.com/yourusername/vue-generator"
+keywords = ["vue", "cli", "generator", "template"]
+categories = ["command-line-utilities", "development-tools"]
+
+[[bin]]
+name = "vue-gen"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.0", features = ["derive"] }
+colored = "2.0"
+anyhow = "1.0"
+
+[dev-dependencies]
+tempfile = "3.8"
+assert_cmd = "2.0"
+predicates = "3.0"
