@@ -1,7 +1,7 @@
 [package]
 name = "generator"
 version = "0.0.0"
-edition = "2025"
+edition = "2024"
 authors = ["Your Name <your.email@example.com>"]
 description = "A unified CLI tool for generating Java, Vue.js, and React projects using napi-rs"
 license = "MIT"
