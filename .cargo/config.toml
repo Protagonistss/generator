@@ -1,0 +1,3 @@
+[alias]
+td = "test -- --nocapture"
+tw = "watch -X 'test -- --nocapture'"

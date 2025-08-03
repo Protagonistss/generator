@@ -1,24 +1,30 @@
 [package]
-name = "vue-generator"
-version = "0.1.0"
-edition = "2021"
+name = "generator"
+version = "0.0.0"
+edition = "2025"
 authors = ["Your Name <your.email@example.com>"]
-description = "A Rust CLI tool for generating Vue.js project templates"
+description = "A unified CLI tool for generating Java, Vue.js, and React projects using napi-rs"
 license = "MIT"
-repository = "https://github.com/yourusername/vue-generator"
-keywords = ["vue", "cli", "generator", "template"]
+repository = "https://github.com/yourusername/project-generator"
+keywords = ["java", "vue", "react", "cli", "generator", "template", "napi"]
 categories = ["command-line-utilities", "development-tools"]
 
-[[bin]]
-name = "vue-gen"
-path = "src/main.rs"
+[lib]
+crate-type = ["cdylib"]
 
 [dependencies]
-clap = { version = "4.0", features = ["derive"] }
-colored = "2.0"
+napi = "2"
+napi-derive = "2"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
 anyhow = "1.0"
+thiserror = "1.0"
+walkdir = "2"
+handlebars = "4.0"
+
+[build-dependencies]
+napi-build = "2"
 
 [dev-dependencies]
 tempfile = "3.8"
-assert_cmd = "2.0"
-predicates = "3.0"
