@@ -1,0 +1,48 @@
+{
+    "name": "@kdesigner/gen",
+    "version": "0.0.0",
+    "description": "A unified CLI tool for generating projects using Rust and napi-rs",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "napi": {
+        "name": "generator",
+        "triples": {
+            "defaults": true,
+            "additional": [
+                "x86_64-pc-windows-msvc",
+                "x86_64-pc-windows-msvc",
+                "aarch64-apple-darwin",
+                "x86_64-unknown-linux-gnu"
+            ]
+        }
+    },
+    "scripts": {
+        "build": "napi build --platform --release dist",
+        "build:debug": "napi build --platform dist",
+        "test": "npm run build && node examples/test-napi.js",
+        "clean": "cargo clean && rm -rf dist",
+        "dev": "npm run build:debug && npm test"
+    },
+    "files": [
+        "dist/",
+        "README.md"
+    ],
+    "devDependencies": {
+        "@napi-rs/cli": "^2.18.0"
+    },
+    "keywords": [
+        "rust",
+        "generator",
+        "template",
+        "napi",
+        "cli",
+        "vue",
+        "react",
+        "java"
+    ],
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yourusername/project-generator.git"
+    }
+}
