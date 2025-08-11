@@ -7,6 +7,7 @@ use serde::{Deserialize, Serialize};
 // 模块声明
 pub mod error;
 pub mod templates;
+pub mod template_registry;
 pub mod utils;
 
 // 重新导出错误类型

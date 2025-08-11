@@ -1,0 +1,56 @@
+{
+  "registries": [
+    {
+      "name": "local-dev",
+      "source": {
+        "type": "local",
+        "path": "./templates"
+      },
+      "enabled": true,
+      "priority": 0
+    },
+    {
+      "name": "vue-official",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/your-org/vue-templates.git",
+        "branch": "main",
+        "subfolder": null
+      },
+      "enabled": true,
+      "priority": 10
+    },
+    {
+      "name": "react-official", 
+      "source": {
+        "type": "git",
+        "url": "https://github.com/your-org/react-templates.git",
+        "branch": "main"
+      },
+      "enabled": true,
+      "priority": 10
+    },
+    {
+      "name": "java-enterprise",
+      "source": {
+        "type": "npm",
+        "package": "@your-org/java-templates",
+        "version": "latest"
+      },
+      "enabled": false,
+      "priority": 20
+    },
+    {
+      "name": "community-templates",
+      "source": {
+        "type": "http",
+        "url": "https://cdn.example.com/templates/community-pack.zip",
+        "checksum": "sha256:abc123..."
+      },
+      "enabled": false,
+      "priority": 30
+    }
+  ],
+  "cache_dir": "./.template_cache",
+  "cache_ttl": 3600
+}
