@@ -2,10 +2,10 @@
 name = "generator"
 version = "0.0.0"
 edition = "2024"
-authors = ["Your Name <your.email@example.com>"]
+authors = ["huangshan <protagonisths@gmail.com>"]
 description = "A unified CLI tool for generating Java, Vue.js, and React projects using napi-rs"
 license = "MIT"
-repository = "https://github.com/yourusername/project-generator"
+repository = "https://github.com/Protagonistss/generator"
 keywords = ["java", "vue", "react", "cli", "generator", "template", "napi"]
 categories = ["command-line-utilities", "development-tools"]
 
@@ -22,7 +22,7 @@ anyhow = "1.0"
 thiserror = "1.0"
 walkdir = "2"
 handlebars = "4.0"
-git2 = "0.20.2"
+git2 = { version = "0.20.2", default-features = false, features = ["https", "vendored-openssl"] }
 
 [build-dependencies]
 napi-build = "2"
