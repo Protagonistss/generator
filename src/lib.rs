@@ -44,25 +44,22 @@ pub struct GenerateResult {
 /// 生成项目
 #[napi]
 pub fn generate_project(options: GenerateOptions) -> napi::Result<GenerateResult> {
-    // TODO: 实现项目生成逻辑
-    match templates::generate_project_from_template(options) {
-        Ok(result) => Ok(result),
-        Err(e) => Err(napi::Error::from_reason(e.to_string())),
-    }
+    templates::generate_project_from_template(options)
+        .map_err(Into::into)
 }
 
 /// 列出可用模板
 #[napi]
 pub fn list_templates(project_type: String) -> napi::Result<Vec<String>> {
     templates::list_templates_by_type(&project_type)
-        .map_err(|e| napi::Error::from_reason(e.to_string()))
+        .map_err(Into::into)
 }
 
 /// 获取模板信息
 #[napi]
 pub fn get_template_info(project_type: String, template: String) -> napi::Result<String> {
     templates::get_template_info(&project_type, &template)
-        .map_err(|e| napi::Error::from_reason(e.to_string()))
+        .map_err(Into::into)
 }
 
 #[cfg(test)]
