@@ -45,7 +45,16 @@
         "rust-expert",
         "GitHub CI可以完成跨平台构建的核心原因：\n\n1. **原生环境构建**: GitHub Actions在真实的macOS/Linux/Windows环境中分别构建，不是交叉编译\n2. **预装工具链**: 每个runner都预装了对应平台的完整开发工具链\n3. **系统库访问**: 可以直接访问目标平台的系统库和SDK\n4. **并行构建**: 多个平台同时构建，最后合并产物\n\n本地Windows环境失败是因为缺少其他平台的交叉编译工具链，这是正常现象。"
       ]
+    },
+    {
+      "from": "memory_saved",
+      "command": "remember",
+      "timestamp": "2025-08-11T13:57:22.561Z",
+      "args": [
+        "rust-expert",
+        "项目中已经存在配置文件 config/template_registries.json，采用了嵌套的source结构：\n- registries数组包含多个模板源\n- 每个registry有name、source、enabled、priority字段\n- source字段是嵌套对象，包含type和对应的配置参数\n- 支持local、git、npm、http四种源类型\n- 有cache_dir和cache_ttl全局配置\n\n这个格式比我之前建议的扁平化结构更清晰，source字段的嵌套设计便于类型安全的反序列化。"
+      ]
     }
   ],
-  "lastUpdated": "2025-08-11T13:17:28.581Z"
+  "lastUpdated": "2025-08-11T13:57:22.574Z"
 }

@@ -13,4 +13,17 @@
     </content>
     <tags>#工具使用</tags>
   </item>
+  <item id="mem_1754920642568_kftbh7kq2" time="2025/08/11 21:57">
+    <content>
+      项目中已经存在配置文件 config/template_registries.json，采用了嵌套的source结构：
+      - registries数组包含多个模板源
+      - 每个registry有name、source、enabled、priority字段
+      - source字段是嵌套对象，包含type和对应的配置参数
+      - 支持local、git、npm、http四种源类型
+      - 有cache_dir和cache_ttl全局配置
+    
+      这个格式比我之前建议的扁平化结构更清晰，source字段的嵌套设计便于类型安全的反序列化。
+    </content>
+    <tags>#其他</tags>
+  </item>
 </memory>
