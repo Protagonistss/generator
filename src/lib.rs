@@ -1,6 +1,3 @@
-//! Project Generator - napi-rs 模块
-//! 提供项目生成功能的 Node.js 绑定
-
 use napi_derive::napi;
 use serde::{Deserialize, Serialize};
 
@@ -44,22 +41,19 @@ pub struct GenerateResult {
 /// 生成项目
 #[napi]
 pub fn generate_project(options: GenerateOptions) -> napi::Result<GenerateResult> {
-    templates::generate_project_from_template(options)
-        .map_err(Into::into)
+    templates::generate_project_from_template(options).map_err(Into::into)
 }
 
 /// 列出可用模板
 #[napi]
 pub fn list_templates(project_type: String) -> napi::Result<Vec<String>> {
-    templates::list_templates_by_type(&project_type)
-        .map_err(Into::into)
+    templates::list_templates_by_type(&project_type).map_err(Into::into)
 }
 
 /// 获取模板信息
 #[napi]
 pub fn get_template_info(project_type: String, template: String) -> napi::Result<String> {
-    templates::get_template_info(&project_type, &template)
-        .map_err(Into::into)
+    templates::get_template_info(&project_type, &template).map_err(Into::into)
 }
 
 #[cfg(test)]
@@ -71,7 +65,7 @@ mod tests {
         // To show test output, use:
         // cargo test -- --nocapture
         println!("This will be shown when running with --nocapture");
-        let result = get_template_info("vue".to_string(), "vite".to_string());
+        let result = get_template_info("vue".to_string(), "nop".to_string());
         // Or use env var:
         // RUST_TEST_NOCAPTURE=1 cargo test
         println!("This will also be shown with RUST_TEST_NOCAPTURE=1");

@@ -34,12 +34,8 @@ pub fn list_templates_by_type(project_type: &str) -> Result<Vec<String>> {
 /// 获取模板信息 - 简化实现
 pub fn get_template_info(project_type: &str, template: &str) -> Result<String> {
     let info = match (project_type, template) {
-        ("vue", "basic") => "Vue 3 + Vite 基础模板",
-        ("vue", "typescript") => "Vue 3 + Vite + TypeScript 模板",
-        ("react", "basic") => "React + Vite 基础模板",
-        ("react", "nextjs") => "Next.js 全栈模板",
-        ("java", "basic") => "Java Maven 基础模板",
-        ("java", "spring-boot") => "Spring Boot 企业级模板",
+        ("vue", "nop") => "Vue 3 NOP SITE 基础模板",
+        ("java", "nop") => "Java17 NOP 基础模板",
         _ => {
             return Err(GeneratorError::TemplateNotFound(format!(
                 "Template not found: {}:{}",
