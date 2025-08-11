@@ -3,50 +3,8 @@
   "stateHistory": [
     {
       "from": "initial",
-      "command": "init",
-      "timestamp": "2025-08-01T13:08:14.401Z",
-      "args": [
-        {
-          "workingDirectory": "e:\\code\\Protagonistss\\generator",
-          "ideType": "trae"
-        }
-      ]
-    },
-    {
-      "from": "initialized",
-      "command": "welcome",
-      "timestamp": "2025-08-01T13:08:42.978Z",
-      "args": []
-    },
-    {
-      "from": "service_discovery",
       "command": "action",
-      "timestamp": "2025-08-01T13:08:54.681Z",
-      "args": [
-        "nuwa"
-      ]
-    },
-    {
-      "from": "role_activated_with_memory",
-      "command": "init",
-      "timestamp": "2025-08-02T03:12:42.403Z",
-      "args": [
-        {
-          "workingDirectory": "e:\\code\\Protagonistss\\generator",
-          "ideType": "trae"
-        }
-      ]
-    },
-    {
-      "from": "initialized",
-      "command": "welcome",
-      "timestamp": "2025-08-02T03:12:56.395Z",
-      "args": []
-    },
-    {
-      "from": "service_discovery",
-      "command": "action",
-      "timestamp": "2025-08-02T03:13:07.351Z",
+      "timestamp": "2025-08-11T08:25:47.971Z",
       "args": [
         "rust-expert"
       ]
@@ -54,28 +12,22 @@
     {
       "from": "role_activated_with_memory",
       "command": "init",
-      "timestamp": "2025-08-03T10:01:13.360Z",
+      "timestamp": "2025-08-11T08:26:05.638Z",
       "args": [
         {
-          "workingDirectory": "e:\\code\\Protagonistss\\generator",
-          "ideType": "trae"
+          "workingDirectory": "/Users/huangshan/Code/Protagonistss/generator-mvp",
+          "ideType": "cursor"
         }
       ]
     },
     {
       "from": "initialized",
-      "command": "welcome",
-      "timestamp": "2025-08-03T10:01:18.446Z",
-      "args": []
-    },
-    {
-      "from": "service_discovery",
       "command": "action",
-      "timestamp": "2025-08-03T10:01:48.938Z",
+      "timestamp": "2025-08-11T08:26:11.282Z",
       "args": [
         "rust-expert"
       ]
     }
   ],
-  "lastUpdated": "2025-08-03T10:01:48.942Z"
+  "lastUpdated": "2025-08-11T08:26:11.302Z"
 }
