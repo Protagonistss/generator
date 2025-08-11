@@ -19,12 +19,10 @@
     "scripts": {
         "build": "napi build --platform --release dist",
         "build:debug": "napi build --platform dist",
-        "build:all": "npm run build:macos && npm run build:windows && npm run build:linux",
-        "build:macos": "napi build --platform --release --target x86_64-apple-darwin dist && napi build --platform --release --target aarch64-apple-darwin dist",
-        "build:windows": "napi build --platform --release --target x86_64-pc-windows-msvc dist",
-        "build:linux": "napi build --platform --release --target x86_64-unknown-linux-gnu dist && napi build --platform --release --target aarch64-unknown-linux-gnu dist",
+        "build:current": "npm run build",
+        "prepublishOnly": "napi prepublish -t npm",
         "test": "npm run build && node examples/test-napi.js",
-        "clean": "cargo clean && rm -rf dist",
+        "clean": "cargo clean && (if exist dist rmdir /s /q dist)",
         "dev": "npm run build:debug && npm test"
     },
     "files": [
@@ -48,5 +46,12 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/yourusername/project-generator.git"
+    },
+    "optionalDependencies": {
+        "@kdesigner/gen-win32-x64-msvc": "0.0.0",
+        "@kdesigner/gen-darwin-x64": "0.0.0",
+        "@kdesigner/gen-linux-x64-gnu": "0.0.0",
+        "@kdesigner/gen-darwin-arm64": "0.0.0",
+        "@kdesigner/gen-linux-arm64-gnu": "0.0.0"
     }
 }

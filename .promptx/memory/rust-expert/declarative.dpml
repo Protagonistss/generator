@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<memory>
+  <item id="mem_1754918248579_o2r6e6vze" time="2025/08/11 21:17">
+    <content>
+      GitHub CI可以完成跨平台构建的核心原因：
+    
+      1. **原生环境构建**: GitHub Actions在真实的macOS/Linux/Windows环境中分别构建，不是交叉编译
+      2. **预装工具链**: 每个runner都预装了对应平台的完整开发工具链
+      3. **系统库访问**: 可以直接访问目标平台的系统库和SDK
+      4. **并行构建**: 多个平台同时构建，最后合并产物
+    
+      本地Windows环境失败是因为缺少其他平台的交叉编译工具链，这是正常现象。
+    </content>
+    <tags>#工具使用</tags>
+  </item>
+</memory>
