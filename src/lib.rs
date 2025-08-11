@@ -70,5 +70,8 @@ mod tests {
         // RUST_TEST_NOCAPTURE=1 cargo test
         println!("This will also be shown with RUST_TEST_NOCAPTURE=1");
         println!("Result: {:?}", result);
+
+        let result_1 = list_templates("vue".to_string());
+        println!("Templates: {:?}", result_1);
     }
 }

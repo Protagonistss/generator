@@ -21,9 +21,8 @@ pub fn generate_project_from_template(options: GenerateOptions) -> Result<Genera
 /// 根据项目类型列出可用模板 - 简化实现
 pub fn list_templates_by_type(project_type: &str) -> Result<Vec<String>> {
     match project_type {
-        "java" => Ok(vec!["basic".to_string(), "spring-boot".to_string()]),
-        "vue" => Ok(vec!["basic".to_string(), "typescript".to_string()]),
-        "react" => Ok(vec!["basic".to_string(), "nextjs".to_string()]),
+        "vue" => Ok(vec!["nop".to_string()]),
+        "java" => Ok(vec!["nop".to_string()]),
         _ => Err(GeneratorError::TemplateNotFound(format!(
             "Unsupported project type: {}",
             project_type
@@ -34,7 +33,7 @@ pub fn list_templates_by_type(project_type: &str) -> Result<Vec<String>> {
 /// 获取模板信息 - 简化实现
 pub fn get_template_info(project_type: &str, template: &str) -> Result<String> {
     let info = match (project_type, template) {
-        ("vue", "nop") => "Vue 3 NOP SITE 基础模板",
+        ("vue", "nop") => "Vue3 NOP-SITE 基础模板",
         ("java", "nop") => "Java17 NOP 基础模板",
         _ => {
             return Err(GeneratorError::TemplateNotFound(format!(
