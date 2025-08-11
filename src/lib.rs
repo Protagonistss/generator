@@ -6,12 +6,11 @@ use serde::{Deserialize, Serialize};
 
 // 模块声明
 pub mod error;
-pub mod utils;
 pub mod templates;
+pub mod utils;
 
 // 重新导出错误类型
 pub use error::{GeneratorError, Result};
-
 
 /// 项目生成选项
 #[napi(object)]
@@ -65,7 +64,6 @@ pub fn get_template_info(project_type: String, template: String) -> napi::Result
         .map_err(|e| napi::Error::from_reason(e.to_string()))
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -75,9 +73,10 @@ mod tests {
         // To show test output, use:
         // cargo test -- --nocapture
         println!("This will be shown when running with --nocapture");
+        let result = get_template_info("vue".to_string(), "vite".to_string());
         // Or use env var:
         // RUST_TEST_NOCAPTURE=1 cargo test
         println!("This will also be shown with RUST_TEST_NOCAPTURE=1");
-
+        println!("Result: {:?}", result);
     }
 }
