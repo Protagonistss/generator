@@ -4,11 +4,53 @@
   "metadata": {
     "version": "2.0.0",
     "description": "project 级资源注册表",
-    "createdAt": "2025-08-11T13:00:03.866Z",
-    "updatedAt": "2025-08-11T13:00:03.872Z",
-    "resourceCount": 3
+    "createdAt": "2025-08-12T07:28:00.951Z",
+    "updatedAt": "2025-08-12T07:28:00.957Z",
+    "resourceCount": 6
   },
   "resources": [
+    {
+      "id": "git-commit-process",
+      "source": "project",
+      "protocol": "execution",
+      "name": "Git Commit Process 执行模式",
+      "description": "执行模式，定义具体的行为模式",
+      "reference": "@project://.promptx/resource/role/git-manager/execution/git-commit-process.execution.md",
+      "metadata": {
+        "createdAt": "2025-08-12T07:28:00.953Z",
+        "updatedAt": "2025-08-12T07:28:00.953Z",
+        "scannedAt": "2025-08-12T07:28:00.953Z",
+        "path": "role/git-manager/execution/git-commit-process.execution.md"
+      }
+    },
+    {
+      "id": "git-manager",
+      "source": "project",
+      "protocol": "role",
+      "name": "Git Manager 角色",
+      "description": "专业角色，提供特定领域的专业能力",
+      "reference": "@project://.promptx/resource/role/git-manager/git-manager.role.md",
+      "metadata": {
+        "createdAt": "2025-08-12T07:28:00.954Z",
+        "updatedAt": "2025-08-12T07:28:00.954Z",
+        "scannedAt": "2025-08-12T07:28:00.954Z",
+        "path": "role/git-manager/git-manager.role.md"
+      }
+    },
+    {
+      "id": "git-workflow",
+      "source": "project",
+      "protocol": "thought",
+      "name": "Git Workflow 思维模式",
+      "description": "思维模式，指导AI的思考方式",
+      "reference": "@project://.promptx/resource/role/git-manager/thought/git-workflow.thought.md",
+      "metadata": {
+        "createdAt": "2025-08-12T07:28:00.954Z",
+        "updatedAt": "2025-08-12T07:28:00.954Z",
+        "scannedAt": "2025-08-12T07:28:00.954Z",
+        "path": "role/git-manager/thought/git-workflow.thought.md"
+      }
+    },
     {
       "id": "rust-development",
       "source": "project",
@@ -17,9 +59,9 @@
       "description": "执行模式，定义具体的行为模式",
       "reference": "@project://.promptx/resource/role/rust-expert/execution/rust-development.execution.md",
       "metadata": {
-        "createdAt": "2025-08-11T13:00:03.869Z",
-        "updatedAt": "2025-08-11T13:00:03.869Z",
-        "scannedAt": "2025-08-11T13:00:03.869Z",
+        "createdAt": "2025-08-12T07:28:00.955Z",
+        "updatedAt": "2025-08-12T07:28:00.955Z",
+        "scannedAt": "2025-08-12T07:28:00.955Z",
         "path": "role/rust-expert/execution/rust-development.execution.md"
       }
     },
@@ -31,9 +73,9 @@
       "description": "专业角色，提供特定领域的专业能力",
       "reference": "@project://.promptx/resource/role/rust-expert/rust-expert.role.md",
       "metadata": {
-        "createdAt": "2025-08-11T13:00:03.870Z",
-        "updatedAt": "2025-08-11T13:00:03.870Z",
-        "scannedAt": "2025-08-11T13:00:03.870Z",
+        "createdAt": "2025-08-12T07:28:00.956Z",
+        "updatedAt": "2025-08-12T07:28:00.956Z",
+        "scannedAt": "2025-08-12T07:28:00.956Z",
         "path": "role/rust-expert/rust-expert.role.md"
       }
     },
@@ -45,22 +87,22 @@
       "description": "思维模式，指导AI的思考方式",
       "reference": "@project://.promptx/resource/role/rust-expert/thought/rust-expertise.thought.md",
       "metadata": {
-        "createdAt": "2025-08-11T13:00:03.871Z",
-        "updatedAt": "2025-08-11T13:00:03.871Z",
-        "scannedAt": "2025-08-11T13:00:03.871Z",
+        "createdAt": "2025-08-12T07:28:00.956Z",
+        "updatedAt": "2025-08-12T07:28:00.956Z",
+        "scannedAt": "2025-08-12T07:28:00.956Z",
         "path": "role/rust-expert/thought/rust-expertise.thought.md"
       }
     }
   ],
   "stats": {
-    "totalResources": 3,
+    "totalResources": 6,
     "byProtocol": {
-      "execution": 1,
-      "role": 1,
-      "thought": 1
+      "execution": 2,
+      "role": 2,
+      "thought": 2
     },
     "bySource": {
-      "project": 3
+      "project": 6
     }
   }
 }
