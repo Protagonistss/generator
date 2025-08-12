@@ -57,17 +57,17 @@ pub fn get_template_info(project_type: String, template: String) -> napi::Result
     templates::get_template_info(&project_type, &template).map_err(Into::into)
 }
 
-/// 运行简单的交互式 CLI
+/// 交互式 CLI
 #[napi]
-pub fn run_simple_cli() -> napi::Result<GenerateResult> {
-    let cli= cli::SimpleCLI::new();
+pub fn run_gen_cli() -> napi::Result<GenerateResult> {
+    let cli= cli::GenCli::new();
     cli.run_simple_interactive().map_err(Into::into)
 }
 
 /// 显示 CLI 帮助信息
 #[napi]
-pub fn show_cli_help() -> napi::Result<String> {
-    let cli = cli::SimpleCLI::new();
+pub fn show_gen_cli_help() -> napi::Result<String> {
+    let cli = cli::GenCli::new();
     cli.show_help();
     Ok("帮助信息已显示".to_string())
 }

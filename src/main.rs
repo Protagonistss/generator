@@ -2,7 +2,7 @@
 //! 可以通过 cargo run 直接执行
 
 // 使用库 crate
-use generator::{run_simple_cli, show_cli_help};
+use generator::{run_gen_cli, show_gen_cli_help};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("🚀 项目生成器 - Rust CLI 模式");
@@ -14,7 +14,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     if args.len() > 1 {
         match args[1].as_str() {
             "help" | "--help" | "-h" => {
-                match show_cli_help() {
+                match show_gen_cli_help() {
                     Ok(_) => return Ok(()),
                     Err(e) => {
                         eprintln!("❌ 显示帮助失败: {}", e);
@@ -34,8 +34,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
     }
 
-    // 直接调用 lib.rs 中的 run_simple_cli 函数
-    match run_simple_cli() {
+    match run_gen_cli() {
         Ok(result) => {
             if result.success {
                 println!("\n🎉 操作完成!");

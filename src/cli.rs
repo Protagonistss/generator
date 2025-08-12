@@ -1,13 +1,9 @@
-//! 简单的命令行交互模块
-//! 用于验证基本的 CLI 功能
-
 use crate::{GenerateOptions, GenerateResult, Result, GeneratorError};
 use std::io::{self, Write};
 
-/// 简单的 CLI 交互器
-pub struct SimpleCLI;
+pub struct GenCli;
 
-impl SimpleCLI {
+impl GenCli {
     pub fn new() -> Self {
         Self
     }
