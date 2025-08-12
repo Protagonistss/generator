@@ -2,6 +2,7 @@ use napi_derive::napi;
 use serde::{Deserialize, Serialize};
 
 // 模块声明
+pub mod cli;
 pub mod error;
 pub mod template_registry;
 pub mod templates;
@@ -54,6 +55,21 @@ pub fn list_templates(project_type: String) -> napi::Result<Vec<String>> {
 #[napi]
 pub fn get_template_info(project_type: String, template: String) -> napi::Result<String> {
     templates::get_template_info(&project_type, &template).map_err(Into::into)
+}
+
+/// 运行简单的交互式 CLI
+#[napi]
+pub fn run_simple_cli() -> napi::Result<GenerateResult> {
+    let cli= cli::SimpleCLI::new();
+    cli.run_simple_interactive().map_err(Into::into)
+}
+
+/// 显示 CLI 帮助信息
+#[napi]
+pub fn show_cli_help() -> napi::Result<String> {
+    let cli = cli::SimpleCLI::new();
+    cli.show_help();
+    Ok("帮助信息已显示".to_string())
 }
 
 #[cfg(test)]

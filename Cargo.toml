@@ -10,7 +10,11 @@ keywords = ["java", "vue", "react", "cli", "generator", "template", "napi"]
 categories = ["command-line-utilities", "development-tools"]
 
 [lib]
-crate-type = ["cdylib"]
+crate-type = ["cdylib", "rlib"] # 添加 rlib 类型
+
+[[bin]]
+name = "generator-cli"
+path = "src/main.rs"
 
 [dependencies]
 napi = "2"

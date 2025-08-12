@@ -2,8 +2,16 @@
     "name": "@kdesigner/gen",
     "version": "0.0.0",
     "description": "A unified CLI tool for generating projects using Rust and napi-rs",
-    "main": "dist/index.js",
+    "main": "dist/index.cjs",
+    "module": "dist/index.js",
     "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs",
+            "types": "./dist/index.d.ts"
+        }
+    },
     "napi": {
         "name": "generator",
         "triples": {
@@ -17,9 +25,11 @@
         }
     },
     "scripts": {
-        "build": "napi build --platform --release dist",
+        "build": "npm run build:dual",
         "build:debug": "napi build --platform dist",
-        "build:current": "npm run build",
+        "build:dual": "npm run build:cjs && npm run build:esm",
+        "build:cjs": "napi build --platform --release --js cjs dist && mv dist/index.js dist/index.cjs",
+        "build:esm": "napi build --platform --release --js esm dist",
         "prepublishOnly": "napi prepublish -t npm",
         "test": "npm run build && node examples/test-napi.js",
         "clean": "cargo clean && (if exist dist rmdir /s /q dist)",

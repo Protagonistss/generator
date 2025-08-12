@@ -26,4 +26,10 @@
     </content>
     <tags>#其他</tags>
   </item>
+  <item id="mem_1754974127499_bbnolyr0h" time="2025/08/12 12:48">
+    <content>
+      用户希望先实现一个简单的CLI来验证和调整功能，不需要复杂的交互系统，重点是快速验证基本的命令行交互能力。
+    </content>
+    <tags>#工具使用</tags>
+  </item>
 </memory>
