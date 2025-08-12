@@ -61,7 +61,7 @@ pub fn get_template_info(project_type: String, template: String) -> napi::Result
 #[napi]
 pub fn run_gen_cli() -> napi::Result<GenerateResult> {
     let cli= cli::GenCli::new();
-    cli.run_simple_interactive().map_err(Into::into)
+    cli.run_interactive().map_err(Into::into)
 }
 
 /// 显示 CLI 帮助信息
